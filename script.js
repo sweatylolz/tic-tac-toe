@@ -30,6 +30,27 @@ const Gameboard = (() => {
     }
 })();
 
+const createPlayer = (name, mark) => {
+    return {
+        name,
+        mark
+    }
+}
+
+const Game = (() => {
+    let players = [];
+    let currentPlayerIndex = 0;
+    let gameOver = false;
+
+    const start = () => {
+        players = [
+            createPlayer(document.getElementById("player1").value, "X"),
+            createPlayer(document.getElementById("player2").value, "O")
+        ]
+    }
+
+})();
+
 
 
 
