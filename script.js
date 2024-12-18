@@ -9,29 +9,31 @@
 // function to check game over after each round
 
 
-let currentPlayer = "X";
+const startButton = document.getElementById("start-btn");
+startButton.addEventListener("click", ()=> {
+    //Game.start();
+})
 
-gameBoard = {
-    board: [
-        ["","",""], 
-        ["","",""], 
-        ["","",""]
-    ]
-}
+const Gameboard = (() => {
+    let gameboard = ["", "", "", "", "", "", "", "", "",]
 
-function createPlayer(name, currentPlayer) {
+    const render = () => {
+        let boardHTML = "";
+        gameboard.forEach((square, index) => {
+            boardHTML += `<div class="square" id="square-${index}">${square}</div>`
+        })
+    }
+    document.getElementById("gameboard").innerHTML = boardHTML;
+
     return {
-        name: name,
-        token: currentPlayer,
-        getName() {
-            return "player " + name + " is using " + "'" + token + "'";
-        },
-    };
-}
+        render,
+    }
+})();
 
-function gameplay() {
 
-}
+
+
+
 
 
 
